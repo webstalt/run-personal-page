@@ -1,0 +1,8 @@
+@import './fonts.css';
+@import './tailwind.css';
+
+@layer base {
+  body {
+    margin: 0;
+  }
+}
