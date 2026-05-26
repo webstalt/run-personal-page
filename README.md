@@ -18,13 +18,20 @@ yarn preview
 
 ## GitHub Pages
 
-Сайт: https://webstalt.github.io/run-personal-page/
+Сайт: **https://webstalt.github.io/run-personal-page/**
 
-После пуша в `main` деплой запускается автоматически (`.github/workflows/deploy.yml`).
+### Настройка (один раз)
 
-**Один раз в GitHub:**
+1. Запушьте код в `main` — workflow соберёт проект и зальёт **`dist`** в ветку `gh-pages`.
+2. GitHub → репозиторий → **Settings** → **Pages**:
+   - **Source**: **Deploy from a branch**
+   - **Branch**: `gh-pages` → папка **`/ (root)`**
+   - Save
 
-1. Репозиторий → **Settings** → **Pages**
-2. **Build and deployment** → **Source**: **GitHub Actions**
+> Не выбирайте ветку `main` и папку `/` — тогда отдаётся исходный код без сборки, и в консоли будет ошибка `src/main.tsx 404`.
 
-Дальше достаточно пушить в `main`.
+3. Подождите 1–2 минуты после зелёного workflow во вкладке **Actions**.
+
+### Обновление сайта
+
+Просто пуш в `main` — деплой запустится автоматически.
