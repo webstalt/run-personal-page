@@ -1,11 +1,30 @@
+# Running personal page
 
-  # Running Race Personal Page
+Страница с лучшими результатами и предстоящими забегами.
 
-  This is a code bundle for Running Race Personal Page. The original project is available at https://www.figma.com/design/Twm4AmWdKAKPn3lAGztpuV/Running-Race-Personal-Page.
+## Локально
 
-  ## Running the code
+```bash
+yarn install
+yarn dev
+```
 
-  Run `npm i` to install the dependencies.
+Сборка:
 
-  Run `npm run dev` to start the development server.
-  
+```bash
+yarn build
+yarn preview
+```
+
+## GitHub Pages
+
+Сайт: https://webstalt.github.io/run-personal-page/
+
+После пуша в `main` деплой запускается автоматически (`.github/workflows/deploy.yml`).
+
+**Один раз в GitHub:**
+
+1. Репозиторий → **Settings** → **Pages**
+2. **Build and deployment** → **Source**: **GitHub Actions**
+
+Дальше достаточно пушить в `main`.

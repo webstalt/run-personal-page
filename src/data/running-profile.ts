@@ -53,14 +53,8 @@ export const runningProfile: RunningProfile = {
       logoId: "moscow-marathon",
     },
     { distance: "21,1 км", time: "1:40:00", race: "Полумарафон Лужники", date: "12.09.2025" },
-    { distance: "5 км", time: "0:15:00", race: "Забег в Парке Горького", date: "03.05.2025" },
-    { distance: "3 км", time: "0:09:00", race: "Ночной забег СПб", date: "22.07.2025" },
-    { distance: "1 км", time: "0:03:00", race: "Спринт Победы", date: "09.05.2025" },
   ],
   upcomingRaces: [
-    { distance: "3 км", race: "Весенний забег", date: "05.06.2025" },
-    { distance: "5 км", race: "Название марафона", date: "05.06.2026" },
-    { distance: "21,1 км", race: "Московский полумарафон", date: "06.09.2026" },
     {
       distance: "42,2 км",
       race: "Московский марафон",
