@@ -1,5 +1,6 @@
 export type RaceLogo = {
   id: string;
+  /** Прямая ссылка на файл (https://i.ibb.co/…/file.png), не страница галереи */
   url: string;
   alt: string;
 };
@@ -8,7 +9,7 @@ export type RaceLogo = {
 export const raceLogos: Record<string, RaceLogo> = {
   "moscow-marathon": {
     id: "moscow-marathon",
-    url: "/logos/moscow-marathon.png",
+    url: "https://i.ibb.co/8DczdDX4/moscow-marathon.png",
     alt: "Московский марафон",
   },
 };
@@ -37,7 +38,8 @@ export type RunningProfile = {
 
 export function getRaceLogoUrl(logoId?: string): string | undefined {
   if (!logoId) return undefined;
-  return raceLogos[logoId]?.url;
+  const url = raceLogos[logoId]?.url.trim();
+  return url || undefined;
 }
 
 export const runningProfile: RunningProfile = {
