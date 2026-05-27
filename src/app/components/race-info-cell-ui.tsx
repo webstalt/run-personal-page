@@ -1,3 +1,4 @@
+import React from "react";
 import { ImageWithFallback } from "./image-with-fallback";
 
 export type RaceInfoCellVariant = "best" | "upcoming";
@@ -6,6 +7,7 @@ export type RaceInfoCellUIProps = {
   title: string;
   subtitle: string;
   logoSrc?: string;
+  reserveLogoSpace?: boolean;
   variant: RaceInfoCellVariant;
   textColor: string;
   subtitleColor: string;
@@ -22,24 +24,14 @@ const subtitleClassName: Record<RaceInfoCellVariant, string> = {
 };
 
 function RaceLogo({ src, title }: { src?: string; title: string }) {
-  if (src) {
-    return (
-      <ImageWithFallback
-        src={src}
-        alt={`Логотип: ${title}`}
-        className="w-5 h-5 shrink-0 rounded object-contain"
-      />
-    );
-  }
+  if (!src) return null;
 
   return (
-    <span
-      className="flex w-5 h-5 shrink-0 items-center justify-center rounded text-[9px] font-bold leading-none"
-      style={{ background: "#ECE9E9", color: "#1B1917" }}
-      aria-hidden
-    >
-      {title.charAt(0).toUpperCase()}
-    </span>
+    <ImageWithFallback
+      src={src}
+      alt={`Логотип: ${title}`}
+      className="w-5 h-5 shrink-0 rounded object-contain"
+    />
   );
 }
 
@@ -47,13 +39,18 @@ export function RaceInfoCellUI({
   title,
   subtitle,
   logoSrc,
+  reserveLogoSpace = false,
   variant,
   textColor,
   subtitleColor,
 }: RaceInfoCellUIProps) {
   return (
     <div className="flex w-full min-w-0 items-start gap-1.5 justify-self-stretch">
-      <RaceLogo src={logoSrc} title={title} />
+      {logoSrc ? (
+        <RaceLogo src={logoSrc} title={title} />
+      ) : reserveLogoSpace ? (
+        <span className="w-5 h-5 shrink-0" aria-hidden />
+      ) : null}
       <div className="min-w-0 flex-1 text-left">
         <p className={`${titleClassName[variant]} break-words`} style={{ color: textColor }}>
           {title}

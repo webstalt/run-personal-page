@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// https://webstalt.github.io/run-personal-page/
+// Настройка для GitHub Pages - убрать при деплое у себя на хостинге
 const repoBase = '/run-personal-page/'
 
 export default defineConfig(({ command }) => ({
