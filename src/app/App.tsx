@@ -255,7 +255,7 @@ export default function App() {
         }}
       >
         {isDarkTheme ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
-        {isDarkTheme ? "Светлая" : "Тёмная"}
+        Сменить тему
       </button>
       <div
         className="absolute w-72 h-72 rounded-full opacity-35 blur-3xl pointer-events-none"
